@@ -1,0 +1,199 @@
+import { Component, Injectable,Inject } from "@angular/core";
+import { Http, RequestOptions } from '@angular/http';
+import { Encrypt } from '../../encrypt';
+import { Headers, Response } from '@angular/http';
+
+import 'rxjs/add/operator/toPromise';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
+@Injectable()
+export class HirepService {
+    // URL to web API
+
+  constructor(
+    @Inject('API_URL') private url:string,
+    private authHttp: Http) { }
+
+
+  //รูปแบบ promise ควรเป็นแบบนี้ // เอาแบบนี้ไปก่อน เด๋วพาตั้งตัวแปล url แบบ global วันหลัง
+  //เราค่อยใส่ path ต่อท้าย แบบของผมตะกี๊
+  //อันนี้ service
+  getToday() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/today`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getTodaytotal() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/todaytotal`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getTodaytype() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/todaytype`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getTodayipt() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/todayipt`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getRevier() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/revier`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getOpicdtm() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/opicdtm`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getEricdtm() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/ericdtm`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getDticdtm() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/dticdtm`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getIptnum() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/iptnum`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getReopuc() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/reopuc`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getReipuc() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/reipuc`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getOvervisit() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/overvisit`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+  getOveradmin() {
+    return new Promise((resolve, reject) => {
+      this.authHttp.get(`${this.url}/overadmin`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+
+  //อันนี้ แบบ get
+  getTypetotal(startdate, enddate) {    
+    return new Promise((resolve, reject) => {
+      //แนบตัวแปบไปกับ service
+      this.authHttp.get(`${this.url}/typetotal/${startdate}/${enddate}`)
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+
+  //อันนี้แบบ post
+    PostTypetotal(startdate,enddate) {    
+    return new Promise((resolve, reject) => {
+      //แนบตัวแปบไปกับ service
+      this.authHttp.post(`${this.url}/typetotal`,{
+        startdate: startdate,
+        enddate: enddate
+      })
+        .map(res => res.json())
+        .subscribe(data => {
+          resolve(data);
+        }, error => {
+          reject(error);
+        });
+    });
+  }
+
+}

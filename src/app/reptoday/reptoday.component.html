@@ -1,0 +1,36 @@
+<h4>รายงานผู้มารับบริการงานผู้ป่วยนอกแยกคลินิก </h4>
+<form>
+    <section class="form-block">
+        <label>เลือกวันที่ผู้มารับบริการ โรงพยาบาล</label>
+
+        <div class="form-group">
+            <label for="formFields_11">StartDate </label>
+            <!-- ผูก object component เข้ากับ ตัวแปร โดยใช้ ngModel  -->
+            <input type="date" [(ngModel)]="startdate" name="startdate" size="35">
+        </div>
+        <div class="form-group">
+            <label for="formFields_11">EndDate</label>
+            <input type="date" [(ngModel)]="enddate" name="enddate" size="35">
+        </div>
+    </section>
+    <button type="submit" class="btn btn-primary" (click)="showTypetotal()">Ok</button>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ลำดับ</th>
+            <th>namecln</th>
+            <th>cln</th>
+            <th>จำนวน</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let total of typetotal">
+            <td>{{total.Num}}</td>
+            <td>{{total.namecln}}</td>
+            <td>{{total.cln}}</td>
+            <td>{{total.cns2}}</td>
+        </tr>
+    </tbody>
+</table>

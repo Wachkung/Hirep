@@ -1,0 +1,33 @@
+<h3>รายงานข้อมูล ณ. วันที่ {{ date | date }} </h3>
+<h4> ผู้มารับบริการตึกผู้ป่วยใน (จำนวนผู้ป่วยที่ยังนอนรักษาที่โรงพยาบาล.)</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>namecln</th>
+            <th>จำนวน</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ipt of todayipt">
+            <td>{{ipt.namecln}}</td>
+            <td>{{ipt.male}}</td>
+        </tr>
+    </tbody>
+</table>
+<h4> รายงานจำนวนผู้มารับบริการตึกผู้ป่วยใน Refer สิทธิ์ UCS </h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ลำดับ</th>
+            <th>month</th>
+            <th>จำนวน</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let re of reipuc">
+            <td>{{re.Num}}</td>
+            <td>{{re.month}}</td>
+            <td>{{re.count}}</td>
+        </tr>
+    </tbody>
+</table>

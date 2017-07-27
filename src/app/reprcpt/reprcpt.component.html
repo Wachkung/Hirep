@@ -1,0 +1,85 @@
+<h3> รายงานสรุปค่าใช้จ่ายเรียกเก็บ ปีงบประมาณ 2560</h3>
+<h4> สรุปค่ายาเรียกเก็บ รายไตรมาส</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Oct - Nov</th>
+            <th>Jan - Mar</th>
+            <th>Apr - Jun</th>
+            <th>Jul - Sep</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let htm of rcptphm">
+            <td>{{htm.Service}}</td>
+            <td>{{htm.Oct}}</td>
+            <td>{{htm.Jan}}</td>
+            <td>{{htm.Apr}}</td>
+            <td>{{htm.Jul}}</td>
+        </tr>
+    </tbody>
+</table>
+<h4> สรุปค่าบริการวัสดุการแพทย์ รายไตรมาส</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Oct - Nov</th>
+            <th>Jan - Mar</th>
+            <th>Apr - Jun</th>
+            <th>Jul - Sep</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let nomed of rcptnomed">
+            <td>{{nomed.Service}}</td>
+            <td>{{nomed.Oct}}</td>
+            <td>{{nomed.Jan}}</td>
+            <td>{{nomed.Apr}}</td>
+            <td>{{nomed.Jul}}</td>
+        </tr>
+    </tbody>
+</table>
+<h4> สรุปค่าปฎิบัติการทางการแพทย์เรียกเก็บ รายไตรมาส</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Oct - Nov</th>
+            <th>Jan - Mar</th>
+            <th>Apr - Jun</th>
+            <th>Jul - Sep</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let lab of rcptlab">
+            <td>{{lab.Service}}</td>
+            <td>{{lab.Oct}}</td>
+            <td>{{lab.Jan}}</td>
+            <td>{{lab.Apr}}</td>
+            <td>{{lab.Jul}}</td>
+        </tr>
+    </tbody>
+</table>
+<h4> สรุปค่าห้องรังสีการแพทย์เรียกเก็บ รายไตรมาส</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Service</th>
+            <th>Oct - Nov</th>
+            <th>Jan - Mar</th>
+            <th>Apr - Jun</th>
+            <th>Jul - Sep</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let xry of rcptxry">
+            <td>{{xry.Service}}</td>
+            <td>{{xry.Oct}}</td>
+            <td>{{xry.Jan}}</td>
+            <td>{{xry.Apr}}</td>
+            <td>{{xry.Jul}}</td>
+        </tr>
+    </tbody>
+</table>

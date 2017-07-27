@@ -1,11 +1,13 @@
-import { browser, by, element } from 'protractor';
+import { browser, element, by } from 'protractor';
 
-export class HirepPage {
+
+export class ClaritySeedAppHome {
+
   navigateTo() {
     return browser.get('/');
   }
 
   getParagraphText() {
-    return element(by.css('app-root h1')).getText();
+    return element(by.css('my-app p')).getText();
   }
 }
