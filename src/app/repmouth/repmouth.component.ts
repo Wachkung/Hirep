@@ -31,7 +31,7 @@ export class RepmouthComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.iptnum = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.iptnum);
+          // console.log(this.iptnum);
         }
       }).catch(error => {
         console.log(error);
@@ -44,7 +44,7 @@ export class RepmouthComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.overadmin = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.overadmin);
+          // console.log(this.overadmin);
         }
       }).catch(error => {
         console.log(error);
@@ -56,7 +56,7 @@ export class RepmouthComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.overvisit = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.overvisit);
+          // console.log(this.overvisit);
         }
       }).catch(error => {
         console.log(error);

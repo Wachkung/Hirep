@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+// var CryptoJS = require("crypto-js");
 
 import * as CryptoJS from 'crypto-js';
 
@@ -16,7 +17,7 @@ export class Encrypt {
   }
 
   decrypt(encryptText) {
-    var bytes  = CryptoJS.AES.decrypt(encryptText, this.secretKey);
+    var bytes = CryptoJS.AES.decrypt(encryptText, this.secretKey);
     var plaintext = bytes.toString(CryptoJS.enc.Utf8);
     return plaintext;
   }

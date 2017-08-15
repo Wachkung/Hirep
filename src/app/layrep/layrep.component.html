@@ -1,22 +1,18 @@
 <clr-main-container>
-
-    <div class="content-area">
-        <router-outlet></router-outlet>
-    </div>
-
-    <!-- <clr-header class="header-2">
+    <clr-header class="header-2">
         <div class="branding">
             <a href="#" class="nav-link">
+                <!--<span class="clr-icon clr-clarity-logo"></span>-->
                 <span class="title">TSM Hospital</span>
             </a>
         </div>
         <div class="header-actions">
-            <a href="#" [routerLink]="['hirep/login']" routerLinkActive="active" class="nav-link nav-icon">
+            <a href="#" [routerLink]="['/hirep/login']" routerLinkActive="active" class="nav-link nav-icon">
                 <clr-icon shape="cog"></clr-icon>
             </a>
         </div>
-    </clr-header> 
-     <nav class="subnav" [clr-nav-level]="2">
+    </clr-header>
+    <nav class="subnav" [clr-nav-level]="1">
         <ul class="nav">
             <li class="nav-item">
                 <a class="nav-link" href="#" routerLink='/hirep/home' routerLinkActive="active">Home</a>
@@ -25,13 +21,10 @@
                 <a class="nav-link" href="#" [routerLink]="['/hirep/about']" routerLinkActive="active">About</a>
             </li>
         </ul>
-    </nav>  
+    </nav>
 
     <div class="content-container">
-        <div class="content-area">
-            <router-outlet></router-outlet>
-        </div>
-         <nav class="sidenav" [clr-nav-level]="1">
+        <nav class="sidenav" [clr-nav-level]="2">
             <section class="nav-group">
                 <input id="tabexample2" type="checkbox">
                 <label for="tabexample2">รายงาน Hi Online </label>
@@ -44,6 +37,9 @@
                     <li><a class="nav-link" href="#" [routerLink]="['/hirep/reptoday']" routerLinkActive="active">จำนวนผู้มารับบริการรายคลินิก</a></li>
                 </ul>
             </section>
-        </nav> 
-    </div> -->
+        </nav>
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
 </clr-main-container>

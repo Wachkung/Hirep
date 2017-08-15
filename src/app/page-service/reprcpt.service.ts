@@ -1,6 +1,6 @@
 import { Component, Injectable,Inject } from "@angular/core";
 import { Http, RequestOptions } from '@angular/http';
-import { Encrypt } from '../../encrypt';
+import { Encrypt } from '../page-service/encrypt';
 import { Headers, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';

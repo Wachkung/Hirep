@@ -31,7 +31,7 @@ export class ReprcptComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.rcptphm = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.rcptphm);
+          // console.log(this.rcptphm);
         }
       }).catch(error => {
         console.log(error);
@@ -43,7 +43,7 @@ export class ReprcptComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.rcptnomed = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.rcptnomed);
+          // console.log(this.rcptnomed);
         }
       }).catch(error => {
         console.log(error);
@@ -55,7 +55,7 @@ export class ReprcptComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.rcptlab = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.rcptlab);
+          // console.log(this.rcptlab);
         }
       }).catch(error => {
         console.log(error);
@@ -67,7 +67,7 @@ export class ReprcptComponent implements OnInit {
       .then((result: any) => {
         if (result.ok) {
           this.rcptxry = result.rows; // ตอนรับ ก็ต้องมารับค่า rows แบบนี้
-          console.log(this.rcptxry);
+          // console.log(this.rcptxry);
         }
       }).catch(error => {
         console.log(error);

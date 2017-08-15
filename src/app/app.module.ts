@@ -14,6 +14,11 @@ import { ReprcptComponent } from './reprcpt/reprcpt.component';
 import { RepmouthComponent } from './repmouth/repmouth.component';
 import { ReptodayComponent } from './reptoday/reptoday.component';
 
+//import new modules you create
+import { ClientModule} from './client/client.module';
+import { LayrepComponent } from './layrep/layrep.component';
+
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -23,18 +28,20 @@ import { ReptodayComponent } from './reptoday/reptoday.component';
         TodayiptComponent,
         ReprcptComponent,
         RepmouthComponent,
-        ReptodayComponent
+        ReptodayComponent,
+        LayrepComponent,
     ],
     imports: [
         BrowserAnimationsModule,
         BrowserModule,
         FormsModule,
         HttpModule,
+        ClientModule,
         ClarityModule.forRoot(),
         ROUTING
     ],
     providers: [
-    { provide: 'API_URL', useValue: 'http://192.168.11.25:3200' }
+    { provide: 'API_URL', useValue: 'http://localhost:3200' }
     ],
     bootstrap: [AppComponent]
 })

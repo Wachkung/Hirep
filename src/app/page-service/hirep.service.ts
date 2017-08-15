@@ -1,6 +1,6 @@
 import { Component, Injectable,Inject } from "@angular/core";
 import { Http, RequestOptions } from '@angular/http';
-import { Encrypt } from '../../encrypt';
+import { Encrypt } from '../page-service/encrypt';
 import { Headers, Response } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
@@ -10,6 +10,7 @@ import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
 @Injectable()
+
 export class HirepService {
     // URL to web API
 
@@ -180,20 +181,37 @@ export class HirepService {
   }
 
   //อันนี้แบบ post
-    PostTypetotal(startdate,enddate) {    
+  PostTypetotal(encryptText) {    
     return new Promise((resolve, reject) => {
-      //แนบตัวแปบไปกับ service
-      this.authHttp.post(`${this.url}/typetotal`,{
-        startdate: startdate,
-        enddate: enddate
-      })
+      let url = `${this.url}/typetotal`;
+      // let url = this.url + '/users/login';
+      let headers = new Headers({ 'Content-Type': 'application/json' });
+      let options = new RequestOptions({ headers: headers });
+      let body = { data: encryptText };
+      this.authHttp.post(url, body, options)
         .map(res => res.json())
         .subscribe(data => {
           resolve(data);
-        }, error => {
-          reject(error);
+        }, () => {
+          reject('Connection failed!');
         });
     });
   }
+
+  //   PostTypetotal(encryptText) {    
+  //     return new Promise((resolve, reject) => {
+  //     //แนบตัวแปบไปกับ service
+  //     this.authHttp.post(`${this.url}/typetotal`,{
+  //       startdate: startdate,
+  //       enddate: enddate
+  //     })
+  //       .map(res => res.json())
+  //       .subscribe(data => {
+  //         resolve(data);
+  //       }, error => {
+  //         reject(error);
+  //       });
+  //   });
+  // }
 
 }

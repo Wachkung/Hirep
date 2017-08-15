@@ -1,0 +1,36 @@
+<clr-main-container>
+    <clr-header class="header-4">
+        <div class="branding">
+            <a href="#" class="nav-link">
+                <span class="title">TSM Hospital</span>
+            </a>
+        </div>
+        <div class="header-actions">
+            <button type="submit" class="btn btn-primary" (click)="Logout()">LogOut {{user.username}}</button>
+        </div>
+
+    </clr-header>
+    <nav class="subnav" [clr-nav-level]="1">
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" routerLink='/client/home' routerLinkActive="active">HomeClient</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="content-container">
+        <nav class="sidenav" [clr-nav-level]="2">
+            <section class="nav-group">
+                <input id="tabexample2" type="checkbox">
+                <label for="tabexample2">Hi Online </label>
+                <ul class="nav-list">
+                    <li><a class="nav-link" href="#" [routerLink]="['/client/home']" routerLinkActive="active">HomeClient</a></li>
+                    <li><a class="nav-link" href="#" [routerLink]="['/client/revisit']" routerLinkActive="active">Revisit Asthma,DM,HT in 28 days</a></li>
+                </ul>
+            </section>
+        </nav>
+        <div class="content-area">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</clr-main-container>
